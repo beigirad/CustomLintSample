@@ -177,15 +177,16 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 27 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 38 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Sep 17 14:44:03 IRDT 2024 by AGP (7.4.2)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Sep 17 15:33:23 IRDT 2024 by AGP (7.4.2)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
+      <a class="mdl-navigation__link" href="#Legacy Lifecycle Deprecation"><i class="material-icons warning-icon">warning</i>Find legacy lifecycle usages (11)</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
       <a class="mdl-navigation__link" href="#FragmentTagUsage"><i class="material-icons warning-icon">warning</i>Use FragmentContainerView instead of the &lt;fragment> tag (1)</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (9)</a>
@@ -207,6 +208,11 @@ document.getElementById(id).style.display = 'none';
   </div>
               <div class="mdl-card__supporting-text">
 <table class="overview">
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Lint">Lint</a>
+</td></tr>
+<tr>
+<td class="countColumn">11</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#Legacy Lifecycle Deprecation">Legacy Lifecycle Deprecation</a>: Find legacy lifecycle usages</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
@@ -244,7 +250,7 @@ document.getElementById(id).style.display = 'none';
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#HardcodedText">HardcodedText</a>: Hardcoded text</td></tr>
-<tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (37)</a>
+<tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (38)</a>
 </td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (38)</a>
 </td></tr>
@@ -252,6 +258,152 @@ document.getElementById(id).style.display = 'none';
 <br/>              </div>
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OverviewCardLink" onclick="hideid('OverviewCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Lint"></a>
+<a name="Legacy Lifecycle Deprecation"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="Legacy Lifecycle DeprecationCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Find legacy lifecycle usages</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt">../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt</a>:28</span>: <span class="message">Replace initVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 25 </span>        initObservers()
+<span class="lineno"> 26 </span>    }
+<span class="lineno"> 27 </span>
+<span class="caretline"><span class="lineno"> 28 </span>    <span class="warning">protected open <span class="keyword">fun</span> initVariables(savedInstanceState: Bundle?) {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 29 </span>    }
+<span class="lineno"> 30 </span>
+<span class="lineno"> 31 </span>    protected open <span class="keyword">fun</span> initVariables() {
+</pre>
+
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt">../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt</a>:31</span>: <span class="message">Replace initVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 28 </span>    protected open <span class="keyword">fun</span> initVariables(savedInstanceState: Bundle?) {
+<span class="lineno"> 29 </span>    }
+<span class="lineno"> 30 </span>
+<span class="caretline"><span class="lineno"> 31 </span>    <span class="warning">protected open <span class="keyword">fun</span> initVariables() {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 32 </span>    }
+<span class="lineno"> 33 </span>
+<span class="lineno"> 34 </span>    protected open <span class="keyword">fun</span> initializedVariables() {
+</pre>
+
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt">../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt</a>:34</span>: <span class="message">Replace initializedVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 31 </span>    protected open <span class="keyword">fun</span> initVariables() {
+<span class="lineno"> 32 </span>    }
+<span class="lineno"> 33 </span>
+<span class="caretline"><span class="lineno"> 34 </span>    <span class="warning">protected open <span class="keyword">fun</span> initializedVariables() {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 35 </span>    }
+<span class="lineno"> 36 </span>
+<span class="lineno"> 37 </span>    protected open <span class="keyword">fun</span> initUI(savedInstanceState: Bundle?) {
+</pre>
+
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt">../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt</a>:37</span>: <span class="message">Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 34 </span>    protected open <span class="keyword">fun</span> initializedVariables() {
+<span class="lineno"> 35 </span>    }
+<span class="lineno"> 36 </span>
+<span class="caretline"><span class="lineno"> 37 </span>    <span class="warning">protected open <span class="keyword">fun</span> initUI(savedInstanceState: Bundle?) {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 38 </span>    }
+<span class="lineno"> 39 </span>
+<span class="lineno"> 40 </span>    protected open <span class="keyword">fun</span> initUI() {
+</pre>
+
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt">../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt</a>:40</span>: <span class="message">Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 37 </span>    protected open <span class="keyword">fun</span> initUI(savedInstanceState: Bundle?) {
+<span class="lineno"> 38 </span>    }
+<span class="lineno"> 39 </span>
+<span class="caretline"><span class="lineno"> 40 </span>    <span class="warning">protected open <span class="keyword">fun</span> initUI() {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 41 </span>    }
+<span class="lineno"> 42 </span>
+<span class="lineno"> 43 </span>    protected open <span class="keyword">fun</span> initializedUI() {
+</pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="Legacy Lifecycle DeprecationDivLink" onclick="reveal('Legacy Lifecycle DeprecationDiv');" />+ 6 More Occurrences...</button>
+<div id="Legacy Lifecycle DeprecationDiv" style="display: none">
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt">../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt</a>:43</span>: <span class="message">Replace initializedUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 40 </span>    protected open <span class="keyword">fun</span> initUI() {
+<span class="lineno"> 41 </span>    }
+<span class="lineno"> 42 </span>
+<span class="caretline"><span class="lineno"> 43 </span>    <span class="warning">protected open <span class="keyword">fun</span> initializedUI() {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 44 </span>    }
+<span class="lineno"> 45 </span>
+<span class="lineno"> 46 </span>    protected open <span class="keyword">fun</span> initObservers() {
+</pre>
+
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt">../../src/main/java/ir/beigirad/customlintsample/BaseFragment.kt</a>:46</span>: <span class="message">Replace initObservers with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 43 </span>    protected open <span class="keyword">fun</span> initializedUI() {
+<span class="lineno"> 44 </span>    }
+<span class="lineno"> 45 </span>
+<span class="caretline"><span class="lineno"> 46 </span>    <span class="warning">protected open <span class="keyword">fun</span> initObservers() {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 47 </span>    }
+<span class="lineno"> 48 </span>}</pre>
+
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt">../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt</a>:21</span>: <span class="message">Replace initVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 18 </span>    private <span class="keyword">var</span> _binding: FragmentFirstBinding? = <span class="keyword">null</span>
+<span class="lineno"> 19 </span>    private <span class="keyword">val</span> binding get() = _binding!!
+<span class="lineno"> 20 </span>
+<span class="caretline"><span class="lineno"> 21 </span>    <span class="warning">override <span class="keyword">fun</span> initVariables() {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 22 </span>        <span class="keyword">super</span>.initVariables()
+<span class="lineno"> 23 </span>
+<span class="lineno"> 24 </span>        <span class="comment">// read input argument</span></pre>
+
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt">../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt</a>:28</span>: <span class="message">Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 25 </span>        <span class="comment">// instantiate viewModel</span>
+<span class="lineno"> 26 </span>    }
+<span class="lineno"> 27 </span>
+<span class="caretline"><span class="lineno"> 28 </span>    <span class="warning">override <span class="keyword">fun</span> initUI() {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 29 </span>        <span class="keyword">super</span>.initUI()
+<span class="lineno"> 30 </span>
+<span class="lineno"> 31 </span>        _binding = FragmentFirstBinding.bind(requireView())
+</pre>
+
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt">../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt</a>:43</span>: <span class="message">Replace initObservers with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 40 </span>        }
+<span class="lineno"> 41 </span>    }
+<span class="lineno"> 42 </span>
+<span class="caretline"><span class="lineno"> 43 </span>    <span class="warning">override <span class="keyword">fun</span> initObservers() {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 44 </span>        <span class="keyword">super</span>.initObservers()
+<span class="lineno"> 45 </span>
+<span class="lineno"> 46 </span>        <span class="comment">// viewModel.stateFlow.collect{...}</span></pre>
+
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/SecondFragment.kt">../../src/main/java/ir/beigirad/customlintsample/SecondFragment.kt</a>:15</span>: <span class="message">Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]</span><br /><pre class="errorlines">
+<span class="lineno"> 12 </span>    private <span class="keyword">var</span> _binding: FragmentSecondBinding? = <span class="keyword">null</span>
+<span class="lineno"> 13 </span>    private <span class="keyword">val</span> binding get() = _binding!!
+<span class="lineno"> 14 </span>
+<span class="caretline"><span class="lineno"> 15 </span>    <span class="warning">override <span class="keyword">fun</span> initUI() {</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 16 </span>        <span class="keyword">super</span>.initUI()
+<span class="lineno"> 17 </span>        _binding = FragmentSecondBinding.bind(requireView())
+<span class="lineno"> 18 </span>        binding.buttonSecond.setOnClickListener {
+</pre>
+
+</div>
+</div>
+<div class="metadata"><div class="explanation" id="explanationLegacy Lifecycle Deprecation" style="display: none;">
+Legacy lifecycle must be deleted step by step<br/>To suppress this error, use the issue id "Legacy Lifecycle Deprecation" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="vendor">
+Vendor: Beigirad Rules<br/>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Legacy Lifecycle Deprecation</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationLegacy Lifecycle DeprecationLink" onclick="reveal('explanationLegacy Lifecycle Deprecation');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="Legacy Lifecycle DeprecationCardLink" onclick="hideid('Legacy Lifecycle DeprecationCard');">
 Dismiss</button>            </div>
             </div>
           </section>
@@ -437,7 +589,8 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 55 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.ext:junit:1.1.3'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 56 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.4.0'</span>
 <span class="lineno"> 57 </span>    implementation <span class="string">'com.jakewharton.timber:timber:5.0.1'</span>
-<span class="lineno"> 58 </span>}</pre>
+<span class="lineno"> 58 </span>    lintChecks project(<span class="string">':lint'</span>)
+</pre>
 
 <span class="location"><a href="../../build.gradle">../../build.gradle</a>:56</span>: <span class="message">A newer version of androidx.test.espresso:espresso-core than 3.4.0 is available: 3.6.1</span><br /><pre class="errorlines">
 <span class="lineno"> 53 </span>    implementation <span class="string">'androidx.navigation:navigation-ui-ktx:2.5.2'</span>
@@ -445,7 +598,8 @@ Dismiss</button>            </div>
 <span class="lineno"> 55 </span>    androidTestImplementation <span class="string">'androidx.test.ext:junit:1.1.3'</span>
 <span class="caretline"><span class="lineno"> 56 </span>    androidTestImplementation <span class="warning"><span class="string">'androidx.test.espresso:espresso-core:3.4.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 57 </span>    implementation <span class="string">'com.jakewharton.timber:timber:5.0.1'</span>
-<span class="lineno"> 58 </span>}</pre>
+<span class="lineno"> 58 </span>    lintChecks project(<span class="string">':lint'</span>)
+<span class="lineno"> 59 </span>}</pre>
 
 </div>
 </div>
@@ -486,13 +640,13 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt">../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt</a>:42</span>: <span class="message">Using 'Log' instead of 'Timber'</span><br /><pre class="errorlines">
-<span class="lineno"> 39 </span>        <span class="keyword">super</span>.onViewCreated(view, savedInstanceState)
-<span class="lineno"> 40 </span>
-<span class="lineno"> 41 </span>        binding.buttonFirst.setOnClickListener {
-<span class="caretline"><span class="lineno"> 42 </span>            <span class="warning">Log.v(<span class="string">"Nav"</span>, <span class="string">"next button clicked"</span>)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 43 </span>            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-<span class="lineno"> 44 </span>        }
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt">../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt</a>:33</span>: <span class="message">Using 'Log' instead of 'Timber'</span><br /><pre class="errorlines">
+<span class="lineno"> 30 </span>
+<span class="lineno"> 31 </span>        _binding = FragmentFirstBinding.bind(requireView())
+<span class="lineno"> 32 </span>        binding.buttonFirst.setOnClickListener {
+<span class="caretline"><span class="lineno"> 33 </span>            <span class="warning">Log.v(<span class="string">"Nav"</span>, <span class="string">"next button clicked"</span>)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 34 </span>            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+<span class="lineno"> 35 </span>        }
 </pre>
 
 </div>
@@ -703,24 +857,24 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt">../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt</a>:47</span>: <span class="message">Custom view `<code>TextView</code>` has <code>setOnTouchListener</code> called on it but does not override <code>performClick</code></span><br /><pre class="errorlines">
-<span class="lineno"> 44 </span>        }
-<span class="lineno"> 45 </span>
-<span class="lineno"> 46 </span>        <span class="comment">// lint warning</span>
-<span class="caretline"><span class="lineno"> 47 </span>        <span class="warning">binding.tvTitle.setOnTouchListener { v, event -></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 48 </span>            <span class="keyword">false</span>
-<span class="lineno"> 49 </span>        }
-<span class="lineno"> 50 </span>    }
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt">../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt</a>:38</span>: <span class="message">Custom view `<code>TextView</code>` has <code>setOnTouchListener</code> called on it but does not override <code>performClick</code></span><br /><pre class="errorlines">
+<span class="lineno"> 35 </span>        }
+<span class="lineno"> 36 </span>
+<span class="lineno"> 37 </span>        <span class="comment">// lint warning</span>
+<span class="caretline"><span class="lineno"> 38 </span>        <span class="warning">binding.tvTitle.setOnTouchListener { v, event -></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 39 </span>            <span class="keyword">false</span>
+<span class="lineno"> 40 </span>        }
+<span class="lineno"> 41 </span>    }
 </pre>
 
-<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt">../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt</a>:47</span>: <span class="message"><code>onTouch</code> lambda should call <code>View#performClick</code> when a click is detected</span><br /><pre class="errorlines">
-<span class="lineno"> 44 </span>        }
-<span class="lineno"> 45 </span>
-<span class="lineno"> 46 </span>        <span class="comment">// lint warning</span>
-<span class="caretline"><span class="lineno"> 47 </span>        binding.tvTitle.setOnTouchListener <span class="warning">{ v, event -></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 48 </span>            <span class="keyword">false</span>
-<span class="lineno"> 49 </span>        }
-<span class="lineno"> 50 </span>    }
+<span class="location"><a href="../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt">../../src/main/java/ir/beigirad/customlintsample/FirstFragment.kt</a>:38</span>: <span class="message"><code>onTouch</code> lambda should call <code>View#performClick</code> when a click is detected</span><br /><pre class="errorlines">
+<span class="lineno"> 35 </span>        }
+<span class="lineno"> 36 </span>
+<span class="lineno"> 37 </span>        <span class="comment">// lint warning</span>
+<span class="caretline"><span class="lineno"> 38 </span>        binding.tvTitle.setOnTouchListener <span class="warning">{ v, event -></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 39 </span>            <span class="keyword">false</span>
+<span class="lineno"> 40 </span>        }
+<span class="lineno"> 41 </span>    }
 </pre>
 
 </div>
@@ -1027,6 +1181,17 @@ In order to use the ActivityResult APIs you must upgrade your                 Fr
 Vendor: Android Open Source Project<br/>
 Identifier: androidx.activity<br/>
 Feedback: <a href="https://issuetracker.google.com/issues/new?component=527362">https://issuetracker.google.com/issues/new?component=527362</a><br/>
+</div>
+<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">Legacy Lifecycle Deprecation<div class="issueSeparator"></div>
+</div>
+<div class="metadata"><div class="explanation">
+Legacy lifecycle must be deleted step by step<br/><div class="vendor">
+Vendor: Beigirad Rules<br/>
 </div>
 <br/>
 <br/></div>

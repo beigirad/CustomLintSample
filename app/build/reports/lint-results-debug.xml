@@ -2,6 +2,182 @@
 <issues format="6" by="lint 7.4.2">
 
     <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    protected open fun initVariables(savedInstanceState: Bundle?) {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt"
+            line="28"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    protected open fun initVariables() {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt"
+            line="31"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initializedVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    protected open fun initializedVariables() {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt"
+            line="34"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    protected open fun initUI(savedInstanceState: Bundle?) {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt"
+            line="37"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    protected open fun initUI() {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt"
+            line="40"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initializedUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    protected open fun initializedUI() {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt"
+            line="43"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initObservers with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    protected open fun initObservers() {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt"
+            line="46"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    override fun initVariables() {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt"
+            line="21"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    override fun initUI() {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt"
+            line="28"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initObservers with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    override fun initObservers() {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt"
+            line="43"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Legacy Lifecycle Deprecation"
+        severity="Warning"
+        message="Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)]"
+        category="Lint"
+        priority="6"
+        summary="Find legacy lifecycle usages"
+        explanation="Legacy lifecycle must be deleted step by step"
+        errorLine1="    override fun initUI() {"
+        errorLine2="    ^">
+        <location
+            file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/SecondFragment.kt"
+            line="15"
+            column="5"/>
+    </issue>
+
+    <issue
         id="OldTargetApi"
         severity="Warning"
         message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
@@ -193,7 +369,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt"
-            line="42"
+            line="33"
             column="13"/>
     </issue>
 
@@ -365,7 +541,7 @@
         errorLine2="        ^">
         <location
             file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt"
-            line="47"
+            line="38"
             column="9"/>
     </issue>
 
@@ -381,7 +557,7 @@
         errorLine2="                                           ^">
         <location
             file="/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt"
-            line="47"
+            line="38"
             column="44"/>
     </issue>
 

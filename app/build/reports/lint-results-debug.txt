@@ -1,3 +1,42 @@
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt:28: Warning: Replace initVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    protected open fun initVariables(savedInstanceState: Bundle?) {
+    ^
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt:31: Warning: Replace initVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    protected open fun initVariables() {
+    ^
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt:34: Warning: Replace initializedVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    protected open fun initializedVariables() {
+    ^
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt:37: Warning: Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    protected open fun initUI(savedInstanceState: Bundle?) {
+    ^
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt:40: Warning: Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    protected open fun initUI() {
+    ^
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt:43: Warning: Replace initializedUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    protected open fun initializedUI() {
+    ^
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/BaseFragment.kt:46: Warning: Replace initObservers with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    protected open fun initObservers() {
+    ^
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt:21: Warning: Replace initVariables with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    override fun initVariables() {
+    ^
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt:28: Warning: Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    override fun initUI() {
+    ^
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt:43: Warning: Replace initObservers with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    override fun initObservers() {
+    ^
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/SecondFragment.kt:15: Warning: Replace initUI with original lifecycle callbacks: [onCreate(...), onViewCreated(...)] [Legacy Lifecycle Deprecation]
+    override fun initUI() {
+    ^
+
+   Explanation for issues of type "Legacy Lifecycle Deprecation":
+   Legacy lifecycle must be deleted step by step
+
+   Vendor: Beigirad Rules
+
 /Users/farhad/Projects/CustomLintSample/app/build.gradle:13: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
         targetSdk 33
         ~~~~~~~~~~~~
@@ -73,7 +112,7 @@
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
-/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt:42: Warning: Using 'Log' instead of 'Timber' [LogNotTimber from com.jakewharton.timber:timber:{version}]
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt:33: Warning: Using 'Log' instead of 'Timber' [LogNotTimber from com.jakewharton.timber:timber:{version}]
             Log.v("Nav", "next button clicked")
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -138,10 +177,10 @@
    lint.unused-resources.exclude-tests =true.
    ,
 
-/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt:47: Warning: Custom view `TextView` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt:38: Warning: Custom view `TextView` has setOnTouchListener called on it but does not override performClick [ClickableViewAccessibility]
         binding.tvTitle.setOnTouchListener { v, event ->
         ^
-/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt:47: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
+/Users/farhad/Projects/CustomLintSample/app/src/main/java/ir/beigirad/customlintsample/FirstFragment.kt:38: Warning: onTouch lambda should call View#performClick when a click is detected [ClickableViewAccessibility]
         binding.tvTitle.setOnTouchListener { v, event ->
                                            ^
 
@@ -194,4 +233,4 @@
    There are quickfixes to automatically extract this hardcoded string into a
    resource lookup.
 
-0 errors, 27 warnings
+0 errors, 38 warnings
